@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Interaktif: Mitigasi Tanah Longsor - Usaha & Energi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        earth: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            500: '#b45309',
+                            600: '#d97706',
+                            700: '#78350f',
+                            800: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for left content panel */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(30, 41, 59, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.3);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(148, 163, 184, 0.5);
+        }
+        .aspect-16-9 {
+            aspect-ratio: 16 / 9;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-0 md:p-4 overflow-x-hidden font-sans">
+
+    <div class="w-full max-w-[1600px] aspect-16-9 bg-slate-900 md:rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col md:flex-row relative">
+        
+        <!-- LEFT HALF: Learning Content (50% Width) -->
+        <div class="w-full md:w-1/2 h-full flex flex-col border-b md:border-b-0 md:border-r border-slate-800 bg-slate-900/90 z-10 overflow-hidden">
+            
+            <!-- Header & Teacher Identity Banner -->
+            <div class="p-4 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-amber-950/20 border-b border-slate-800/80 flex justify-between items-center">
+                <div>
+                    <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full">
+                        Fase F • Kelas XI SMA
+                    </span>
+                    <h1 class="text-base md:text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-400 mt-0.5">
+                        Mitigasi Tanah Longsor
+                    </h1>
+                    <p class="text-[10px] text-slate-400 flex items-center gap-1.5 mt-0.5">
+                        <i class="fa-solid fa-graduation-cap text-amber-500"></i> Integrasi Konsep Usaha & Energi
+                    </p>
+                </div>
+                <!-- Teacher Profile Pill -->
+                <div class="text-right flex items-center gap-2 bg-slate-800/50 p-1.5 rounded-xl border border-slate-700/50">
+                    <div class="hidden sm:block">
+                        <p class="text-[10px] font-semibold text-slate-200">Yudi Maulana, M.Pd.,Gr</p>
+                        <p class="text-[8px] text-emerald-400">MAN Insan Cendekia Bengkulu Tengah</p>
+                    </div>
+                    <div class="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white text-sm font-bold shadow-md shadow-emerald-900/30">
+                        YM
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex border-b border-slate-800 bg-slate-950/50 p-1.5 gap-1">
+                <button onclick="switchTab('tujuan')" id="tab-btn-tujuan" class="flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 bg-emerald-600 text-white shadow-lg shadow-emerald-900/20 border border-emerald-500/30">
+                    <i class="fa-solid fa-bullseye"></i> Tujuan
+                </button>
+                <button onclick="switchTab('materi')" id="tab-btn-materi" class="flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50">
+                    <i class="fa-solid fa-book-open"></i> Materi
+                </button>
+                <button onclick="switchTab('evaluasi')" id="tab-btn-evaluasi" class="flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50">
+                    <i class="fa-solid fa-square-check"></i> Kuis Evaluasi
+                </button>
+            </div>
+
+            <!-- Tab Contents Area (Scrollable) -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-4">
+
+                <div id="content-tujuan" class="tab-content block space-y-4">
+                    <div class="bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 rounded-xl p-4">
+                        <div class="flex items-center gap-2.5 mb-3">
+                            <div class="p-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20 text-xs">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-slate-200">Capaian Pembelajaran (CP)</h3>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Peserta didik mampu menganalisis konsep dan hukum-hukum mekanika klasik khususnya keterkaitan <span class="text-emerald-400 font-semibold">Usaha (W)</span> dan perubahan <span class="text-emerald-400 font-semibold">Energi (Kinetik & Potensial)</span>, serta mengkontekstualisasikannya dalam mengkaji potensi bencana alam geologi seperti gerakan tanah (tanah longsor).
+                        </p>
+                    </div>
+
+                    <h3 class="text-xs font-bold tracking-widest text-slate-500 uppercase mt-4">Tujuan Spesifik Pembelajaran</h3>
+                    <div class="space-y-2">
+                        <!-- Goal Item 1 -->
+                        <div class="flex gap-3 bg-slate-900 border border-slate-800/50 hover:border-emerald-500/20 rounded-xl p-3.5 transition duration-150 group">
+                            <span class="h-6 w-6 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">Analisis Energi Potensial Gravitasi</h4>
+                                <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Menganalisis faktor pemicu gerakan massa tanah pada lereng berdasarkan besarnya Energi Potensial Gravitasi (E<sub>p</sub> = m·g·h) dipengaruhi sudut kemiringan lereng.</p>
+                            </div>
+                        </div>
+                        <!-- Goal Item 2 -->
+                        <div class="flex gap-3 bg-slate-900 border border-slate-800/50 hover:border-emerald-500/20 rounded-xl p-3.5 transition duration-150 group">
+                            <span class="h-6 w-6 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">Teorema Usaha-Energi pada Gerakan Lereng</h4>
+                                <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Menghitung usaha yang dilakukan oleh komponen gaya gravitasi sejajar permukaan lereng serta perubahan energi kinetik saat longsoran meluncur turun.</p>
+                            </div>
+                        </div>
+                        <!-- Goal Item 3 -->
+                        <div class="flex gap-3 bg-slate-900 border border-slate-800/50 hover:border-emerald-500/20 rounded-xl p-3.5 transition duration-150 group">
+                            <span class="h-6 w-6 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">Simulasi Fisika untuk Rekayasa Mitigasi</h4>
+                                <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Merancang solusi struktural mitigasi bencana tanah longsor (seperti terasering dan reboisasi lereng) menggunakan analisis usaha gaya gesek non-konservatif.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-materi" class="tab-content hidden space-y-5">
+                    
+                    <!-- Interactive Concept Slider Demonstration -->
+                    <div class="bg-gradient-to-r from-slate-950 to-slate-900 border border-slate-800 rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="text-xs font-bold text-amber-400"><i class="fa-solid fa-calculator mr-1"></i> Visualisasi Instan Energi Potensial Lereng</h4>
+                            <span class="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-md">Interaktif</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+                                    <span>Massa Material Longsor (m)</span>
+                                    <span class="font-bold text-slate-200" id="val-mass">2000 kg</span>
+                                </div>
+                                <input type="range" id="slider-mass" min="1000" max="5000" step="500" value="2000" oninput="updateCalculations()" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+                                    <span>Ketinggian Bukit / Lereng (h)</span>
+                                    <span class="font-bold text-slate-200" id="val-height">15 meter</span>
+                                </div>
+                                <input type="range" id="slider-height" min="5" max="40" step="5" value="15" oninput="updateCalculations()" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                            </div>
+                            <div class="pt-3 border-t border-slate-800/50 flex justify-between items-center text-xs">
+                                <span class="text-slate-400 font-medium">Energi Potensial Awal (E<sub>p</sub> = m · g · h):</span>
+                                <span class="text-sm font-extrabold text-amber-400" id="total-ep">300.000 Joule</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Material Chapters Accordion -->
+                    <div class="space-y-3">
+                        <!-- Chapter 1 -->
+                        <div class="bg-slate-900 border border-slate-800/80 rounded-xl overflow-hidden">
+                            <div class="p-3.5 bg-slate-850 border-b border-slate-800/50 flex items-center justify-between">
+                                <span class="text-xs font-bold text-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    1. Energi Potensial & Kestabilan Lereng
+                                </span>
+                            </div>
+                            <div class="p-4 text-xs text-slate-400 space-y-2 leading-relaxed">
+                                <p>Setiap partikel material batuan atau tanah yang berada di puncak bukit menyimpan <strong>Energi Potensial Gravitasi (E<sub>p</sub>)</strong> akibat posisinya terhadap dasar bukit.</p>
+                                <div class="bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 text-center font-mono my-2 text-slate-300">
+                                    E<sub>p</sub> = m · g · h
+                                </div>
+                                <p>Ketika hujan lebat terjadi, air terserap ke dalam tanah. Hal ini menyebabkan <span class="text-emerald-400 font-semibold">massa total (m) meningkat drastis</span>. Berdasarkan rumus di atas, pertambahan massa secara linear akan menaikkan energi potensial tebing, mengubah kondisi seimbang statis menjadi sangat tidak stabil.</p>
+                            </div>
+                        </div>
+
+                        <!-- Chapter 2 -->
+                        <div class="bg-slate-900 border border-slate-800/80 rounded-xl overflow-hidden">
+                            <div class="p-3.5 bg-slate-850 border-b border-slate-800/50 flex items-center justify-between">
+                                <span class="text-xs font-bold text-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    2. Konversi Energi & Daya Hancur Longsoran
+                                </span>
+                            </div>
+                            <div class="p-4 text-xs text-slate-400 space-y-2 leading-relaxed">
+                                <p>Saat lereng runtuh, material tanah mengalami perpindahan ke bawah. Di sinilah terjadi transisi energi dari <strong>Energi Potensial menjadi Energi Kinetik (E<sub>k</sub>)</strong>.</p>
+                                <div class="bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 text-center font-mono my-2 text-slate-300">
+                                    E<sub>k</sub> = &frac12; · m · v<sup>2</sup>
+                                </div>
+                                <p>Menurut hukum kekekalan energi mekanik, jika gaya non-konservatif diabaikan, seluruh penurunan E<sub>p</sub> berubah menjadi peningkatan E<sub>k</sub>. Kecepatan longsoran (<span class="text-amber-400 font-semibold">v</span>) yang sangat tinggi di kaki bukit inilah yang menghasilkan daya hancur dahsyat bagi permukiman di bawahnya.</p>
+                            </div>
+                        </div>
+
+                        <!-- Chapter 3 -->
+                        <div class="bg-slate-900 border border-slate-800/80 rounded-xl overflow-hidden">
+                            <div class="p-3.5 bg-slate-850 border-b border-slate-800/50 flex items-center justify-between">
+                                <span class="text-xs font-bold text-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                    3. Usaha Gaya Gesek sebagai Solusi Mitigasi
+                                </span>
+                            </div>
+                            <div class="p-4 text-xs text-slate-400 space-y-2 leading-relaxed">
+                                <p>Untuk menghentikan material longsor, dibutuhkan kerja luar berupa <strong>Usaha (W)</strong> negatif yang dilakukan oleh gaya hambatan atau gaya gesek lereng (f<sub>g</sub>).</p>
+                                <div class="bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 text-center font-mono my-2 text-slate-300">
+                                    W<sub>gesek</sub> = - f<sub>g</sub> · s
+                                </div>
+                                <p><strong>Strategi Mitigasi Fisika:</strong></p>
+                                <ul class="list-disc list-inside space-y-1 mt-2 text-slate-350 pl-1">
+                                    <li><span class="text-blue-400 font-semibold">Terasering:</span> Memotong panjang lintasan luncur (<span class="font-mono">s</span>) menjadi undakan-undakan pendek, sehingga akumulasi energi kinetik dapat diredam bertahap.</li>
+                                    <li><span class="text-blue-400 font-semibold">Vegetasi (Reboisasi):</span> Akar pohon bertindak seperti jangkar yang meningkatkan nilai gaya gesek penahan mekanis (f<sub>g</sub>) permukaan tanah.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-evaluasi" class="tab-content hidden space-y-4">
+                    
+                    <!-- Welcome/Start Screen for Quiz -->
+                    <div id="quiz-intro-screen" class="bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 rounded-xl p-5 text-center">
+                        <div class="h-12 w-12 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 flex items-center justify-center mx-auto mb-3 text-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-slate-200 mb-1">Evaluasi Mandiri Integratif</h3>
+                        <p class="text-[11px] text-slate-400 leading-relaxed mb-4">
+                            Uji pemahaman Anda mengenai integrasi fenomena tanah longsor dengan materi Usaha & Energi melalui 10 butir soal pilihan ganda interaktif berikut ini.
+                        </p>
+                        <div class="grid grid-cols-2 gap-2 text-left mb-5">
+                            <div class="bg-slate-900/50 p-2.5 rounded-lg border border-slate-800">
+                                <p class="text-[9px] text-slate-500 uppercase font-semibold">Jumlah Soal</p>
+                                <p class="text-xs font-bold text-slate-300 mt-0.5">10 Pilihan Ganda</p>
+                            </div>
+                            <div class="bg-slate-900/50 p-2.5 rounded-lg border border-slate-800">
+                                <p class="text-[9px] text-slate-500 uppercase font-semibold">Opsi Pilihan</p>
+                                <p class="text-xs font-bold text-slate-300 mt-0.5">5 Opsi (A - E)</p>
+                            </div>
+                        </div>
+                        <button onclick="startQuiz()" class="w-full py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs rounded-xl transition duration-150 shadow-lg shadow-emerald-950/40">
+                            Mulai Evaluasi Sekarang
+                        </button>
+                    </div>
+
+                    <!-- Main Quiz Container (Hidden initially) -->
+                    <div id="quiz-play-screen" class="hidden space-y-4">
+                        <!-- Progress Header -->
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Kuis Pembelajaran</span>
+                            <span class="text-xs font-bold text-emerald-400" id="quiz-question-counter">Soal 1 dari 10</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                            <div id="quiz-progress-bar" class="bg-emerald-500 h-full transition-all duration-300" style="width: 10%"></div>
+                        </div>
+
+                        <!-- Question Box -->
+                        <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4">
+                            <p class="text-xs font-semibold text-slate-200 leading-relaxed" id="quiz-question-text">
+                                Pertanyaan akan dimuat di sini...
+                            </p>
+                        </div>
+
+                        <!-- Options Box -->
+                        <div class="space-y-2" id="quiz-options-container">
+                            <!-- Options will be generated dynamically here -->
+                        </div>
+
+                        <!-- Navigation Bar -->
+                        <div class="flex justify-between items-center pt-2 gap-2">
+                            <button id="btn-prev-question" onclick="prevQuestion()" class="px-4 py-2 text-[11px] font-bold rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-850 text-slate-400 hover:text-slate-100 transition duration-150">
+                                <i class="fa-solid fa-arrow-left mr-1"></i> Kembali
+                            </button>
+                            <button id="btn-next-question" onclick="nextQuestion()" class="px-4 py-2 text-[11px] font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition duration-150 flex items-center gap-1.5">
+                                Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Score Card/Results Screen (Hidden initially) -->
+                    <div id="quiz-score-screen" class="hidden bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 rounded-xl p-5 text-center space-y-4">
+                        <h3 class="text-sm font-bold text-slate-200">Hasil Evaluasi Mandiri</h3>
+                        
+                        <div class="relative w-28 h-28 mx-auto flex items-center justify-center">
+                            <svg class="w-full h-full transform -rotate-90">
+                                <circle cx="56" cy="56" r="48" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent" />
+                                <circle id="score-circle-progress" cx="56" cy="56" r="48" stroke="currentColor" stroke-width="8" class="text-emerald-500 transition-all duration-1000" stroke-dasharray="301.6" stroke-dashoffset="150" fill="transparent" />
+                            </svg>
+                            <div class="absolute text-center">
+                                <span class="text-2xl font-black text-slate-100" id="score-percentage-text">0%</span>
+                                <p class="text-[8px] text-slate-500 uppercase tracking-widest font-semibold mt-0.5">Skor Anda</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <p class="text-xs text-slate-300 font-semibold" id="score-summary-text">Anda menjawab 0 dari 10 soal dengan benar.</p>
+                            <p class="text-[11px] text-slate-400" id="score-feedback-text">Terus belajar untuk memperkuat dasar materi mitigasi longsor!</p>
+                        </div>
+
+                        <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl grid grid-cols-2 gap-2 text-left">
+                            <div>
+                                <span class="text-[8px] text-slate-500 uppercase block font-semibold">Benar</span>
+                                <span class="text-xs font-bold text-emerald-400" id="score-stat-correct">0 / 10</span>
+                            </div>
+                            <div>
+                                <span class="text-[8px] text-slate-500 uppercase block font-semibold">Predikat Kelulusan</span>
+                                <span class="text-xs font-bold text-amber-400" id="score-stat-status">Perlu Mengulang</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="restartQuiz()" class="flex-1 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold text-xs rounded-xl border border-slate-800 transition duration-150">
+                                <i class="fa-solid fa-arrow-rotate-right mr-1"></i> Ulangi Kuis
+                            </button>
+                            <button onclick="switchTab('materi')" class="flex-1 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition duration-150">
+                                <i class="fa-solid fa-book-open mr-1"></i> Ulas Materi
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <!-- Bottom Navigation Help Area -->
+            <div class="p-3 bg-slate-950 border-t border-slate-850 text-center text-[10px] text-slate-500">
+                Media Pembelajaran Interaktif Kurikulum Merdeka — MAN IC Bengkulu Tengah
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 h-full bg-slate-950 relative flex flex-col">
+            
+            <!-- Floating info overlay for the Assemblr simulation -->
+            <div class="absolute top-4 left-4 z-20 bg-slate-900/95 backdrop-blur-md border border-slate-700/60 p-2.5 rounded-xl flex items-center gap-3 shadow-lg pointer-events-none max-w-[280px]">
+                <div class="h-8 w-8 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-cube text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="text-[10px] font-bold text-slate-200">Simulasi 3D/AR Assemblr</h3>
+                    <p class="text-[8px] text-slate-400 leading-normal mt-0.5">Gunakan kontrol tetikus (mouse/touchscreen) untuk rotasi, perbesar dan jelajahi objek gunung berapi.</p>
+                </div>
+            </div>
+
+            <div class="flex-1 relative bg-slate-950 flex items-center justify-center overflow-hidden">
+                <!-- If the page takes a second to load, show a nice retro-tech looking blueprint load graphic -->
+                <div class="absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-4 text-center pointer-events-none" id="iframe-loader">
+                    <div class="w-10 h-10 border-2 border-emerald-500/30 border-t-emerald-400 rounded-full animate-spin mb-3"></div>
+                    <p class="text-xs font-semibold text-slate-300">Menghubungkan Simulator 3D...</p>
+                    <p class="text-[9px] text-slate-500 mt-1">Platform Pembelajaran Assemblr Edu</p>
+                </div>
+                
+                <!-- Live Embedded Iframe -->
+                <iframe 
+                    src='https://viewer.assemblrworld.com/Embed/-Hn5tQrwEwaYC6Qge9Te' 
+                    class="w-full h-full border-0 absolute inset-0 z-10 bg-transparent"
+                    allow="camera; microphone; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; fullscreen" 
+                    allowFullScreen
+                    onload="hideLoader()">
+                </iframe>
+            </div>
+
+            <!-- Floating Quick Guide at bottom of simulator -->
+            <div class="absolute bottom-4 right-4 z-20 flex gap-2">
+                <div class="bg-slate-900/90 backdrop-blur-md border border-slate-700/50 px-3 py-1.5 rounded-lg text-[9px] font-semibold text-emerald-400 flex items-center gap-1.5 shadow-md">
+                    <i class="fa-solid fa-circle-dot animate-pulse"></i> Simulasi Aktif
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Set the Loader to hide after iframe is ready
+        function hideLoader() {
+            document.getElementById('iframe-loader').style.display = 'none';
+        }
+
+        // Tab Switch Logic
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('[id^="tab-btn-"]');
+            buttons.forEach(btn => {
+                btn.className = "flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50";
+            });
+
+            // Show active tab and apply style
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+            
+            if (tabName === 'tujuan') {
+                activeBtn.className = "flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 bg-emerald-600 text-white shadow-lg shadow-emerald-900/20 border border-emerald-500/30";
+            } else if (tabName === 'materi') {
+                activeBtn.className = "flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 bg-amber-600 text-white shadow-lg shadow-amber-900/20 border border-amber-500/30";
+            } else if (tabName === 'evaluasi') {
+                activeBtn.className = "flex-1 py-2 px-3 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition duration-200 bg-blue-600 text-white shadow-lg shadow-blue-900/20 border border-blue-500/30";
+            }
+        }
+
+        function updateCalculations() {
+            const mass = parseInt(document.getElementById('slider-mass').value);
+            const height = parseInt(document.getElementById('slider-height').value);
+            const g = 10; // Gravitational acceleration constant
+
+            // Display text update
+            document.getElementById('val-mass').innerText = mass.toLocaleString('id-ID') + ' kg';
+            document.getElementById('val-height').innerText = height + ' meter';
+
+            // Calculate Ep = mgh
+            const ep = mass * g * height;
+            document.getElementById('total-ep').innerText = ep.toLocaleString('id-ID') + ' Joule';
+        }
+
+        // Initialize Calculations once on boot
+        updateCalculations();
+
+        const quizQuestions = [
+            {
+                question: "Sebuah bongkahan batuan bermassa m berada di puncak lereng setinggi h. Jika tebing tersebut tiba-tiba longsor dan meluncur ke bawah, konsep fisika yang paling tepat menjelaskan pemicu utama konversi energi kinetik saat longsoran terjadi akibat pengaruh gravitasi adalah...",
+                options: [
+                    "A. Energi mekanik batu bernilai nol di puncak bukit.",
+                    "B. Energi kinetik batu mencapai nilai maksimum di puncak tebing.",
+                    "C. Energi potensial gravitasi tanah/batuan yang tersimpan diubah menjadi energi kinetik saat bergerak jatuh.",
+                    "D. Gaya gesek permukaan lereng selalu lebih besar dari gaya berat horizontal.",
+                    "E. Usaha yang dilakukan gaya berat bernilai negatif selama batu bergerak meluncur."
+                ],
+                correct: 2 // Index 2 (C)
+            },
+            {
+                question: "Massa tanah sebesar 2.000 kg berada di puncak lereng bukit setinggi 20 meter sebelum terjadi bencana longsor. Jika percepatan gravitasi bumi g = 10 m/s², berapakah energi potensial gravitasi awal yang dimiliki oleh massa tanah tersebut?",
+                options: [
+                    "A. 40.000 Joule",
+                    "B. 200.000 Joule",
+                    "C. 400.000 Joule",
+                    "D. 800.000 Joule",
+                    "E. 4.000.000 Joule"
+                ],
+                correct: 2 // Index 2 (C)
+            },
+            {
+                question: "Ketika runtuhan material tanah longsor bergerak menuruni lereng tebing curam yang dianggap sangat licin (gesekan nihil), transformasi energi yang terjadi pada sistem tersebut memenuhi Hukum Kekekalan Energi Mekanik. Hal ini berarti...",
+                options: [
+                    "A. Nilai energi kinetik selalu konstan di setiap titik lintasan.",
+                    "B. Berkurangnya nilai energi potensial sama besar dengan bertambahnya energi kinetik.",
+                    "C. Energi potensial bertambah seiring bertambahnya kecepatan runtuhan.",
+                    "D. Usaha yang dilakukan oleh gaya berat bernilai nol.",
+                    "E. Energi total sistem berkurang drastis karena berubah menjadi energi termal."
+                ],
+                correct: 1 // Index 1 (B)
+            },
+            {
+                question: "Terdapat dua jalur lereng: Lereng A sangat curam, sedangkan Lereng B cukup landai. Keduanya memiliki ketinggian vertikal yang sama h. Jika suatu material batu bermassa m meluncur tanpa gesekan dari kedua lereng tersebut, maka kecepatan batu di dasar tebing adalah...",
+                options: [
+                    "A. Lebih besar di Lereng A karena lintasan luncurnya lebih pendek.",
+                    "B. Lebih besar di Lereng B karena waktu tempuhnya lebih lama.",
+                    "C. Sama besar karena perubahan energi potensial gravitasi pada kedua kasus bernilai sama.",
+                    "D. Hanya dipengaruhi sudut kemiringan lereng tanpa bergantung pada ketinggian bukit.",
+                    "E. Lereng B menghasilkan kecepatan akhir yang lebih besar karena gaya normalnya bernilai kecil."
+                ],
+                correct: 2 // Index 2 (C)
+            },
+            {
+                question: "Material tanah longsor tebing vertikal setinggi 15 m terhenti tepat di kaki lereng karena mendapat gaya hambat/gesek sebesar 5.000 N dari tanah dasar tebing. Jika usaha yang dilakukan gaya hambatan tersebut untuk menghentikan seluruh runtuhan tanah adalah -150.000 J, berapakah jarak rayapan material tanah tersebut merayap di kaki lereng?",
+                options: [
+                    "A. 10 meter",
+                    "B. 20 meter",
+                    "C. 30 meter",
+                    "D. 40 meter",
+                    "E. 50 meter"
+                ],
+                correct: 2 // Index 2 (C)
+            },
+            {
+                question: "Tinjauan konsep Usaha dan Energi menjelaskan bahwa rekayasa pembuatan terasering (undakan bertingkat) pada lahan pertanian miring ditujukan untuk mitigasi bencana karena metode ini mampu...",
+                options: [
+                    "A. Menghilangkan gaya gravitasi bumi secara parsial pada tanah.",
+                    "B. Meningkatkan nilai energi kinetik maksimum dari runtuhan massa.",
+                    "C. Memperpendek jarak jatuh vertikal bebas (h) secara bertahap sehingga akumulasi kecepatan (E_k) diredam di setiap undakan.",
+                    "D. Mengubah usaha gaya non-konservatif menjadi energi mekanik yang abadi.",
+                    "E. Memperbesar komponen gaya berat sejajar bidang luncur kemiringan lereng."
+                ],
+                correct: 2 // Index 2 (C)
+            },
+            {
+                question: "Ketika curah hujan tinggi, pori-pori tanah menyerap air secara masif sehingga massa total lereng bukit meningkat. Berdasarkan analisis energi potensial gravitasi, konsekuensi mekanika dari peningkatan massa lereng ini adalah...",
+                options: [
+                    "A. Energi potensial bukit menurun sehingga stabilitas lereng semakin terjaga.",
+                    "B. Energi potensial awal meningkat, menghasilkan potensi rilis usaha gravitasi yang jauh lebih merusak saat longsor terjadi.",
+                    "C. Kecepatan jatuh material tanah menurun drastis.",
+                    "D. Gaya gesek statis penahan secara otomatis akan langsung seimbang tanpa batas maksimal.",
+                    "E. Nilai konstan percepatan gravitasi bumi di daerah tersebut berubah menjadi ekstrem."
+                ],
+                correct: 1 // Index 1 (B)
+            },
+            {
+                question: "Batu tebing bermassa 50 kg terjatuh menggelinding akibat erosi tanah. Di pertengahan tebing, batu tersebut terekam memiliki kecepatan luncur sebesar 10 m/s. Berapakah energi kinetik yang dimiliki batu pada titik lintasan tersebut?",
+                options: [
+                    "A. 250 Joule",
+                    "B. 500 Joule",
+                    "C. 2.500 Joule",
+                    "D. 5.000 Joule",
+                    "E. 10.000 Joule"
+                ],
+                correct: 2 // Index 2 (C)
+            },
+            {
+                question: "Sistem vegetasi hutan dengan tanaman berakar kuat sangat efektif memitigasi longsor. Dalam prinsip fisika mekanika klasik, akar pohon di lereng bertindak sebagai...",
+                options: [
+                    "A. Agen penambah energi potensial tebing.",
+                    "B. Pemberi gaya luar penahan non-konservatif yang melakukan usaha negatif terhadap arah gerak longsoran.",
+                    "C. Katalisator percepatan transisi energi potensial menjadi energi kinetik.",
+                    "D. Media yang meluruhkan nilai massa jenis tanah secara gradual.",
+                    "E. Pengubah arah gaya tarik gravitasi bumi dari vertikal menjadi horizontal."
+                ],
+                correct: 1 // Index 1 (B)
+            },
+            {
+                question: "Ketika longsoran bergerak turun, energi mekanik total bukit (Ep + Ek) berkurang karena gesekan material tebing yang diubah menjadi energi panas (termal) dan bunyi tabrakan batu. Hukum Kekekalan Energi menegaskan peristiwa ini sebagai...",
+                options: [
+                    "A. Energi mekanik sistem bukit tetap bernilai konstan walaupun ada gesekan.",
+                    "B. Jumlah total seluruh energi (energi mekanik + termal + suara) konstan di alam semesta.",
+                    "C. Energi kinetik akhir di dasar bukit pasti melebihi total energi potensial awal.",
+                    "D. Energi potensial mustahil ditransformasikan menjadi bentuk energi non-mekanik.",
+                    "E. Gerakan longsoran akan meluncur tanpa henti untuk selamanya karena energi bersifat kekal."
+                ],
+                correct: 1 // Index 1 (B)
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let userAnswers = Array(10).fill(null);
+
+        function startQuiz() {
+            document.getElementById('quiz-intro-screen').classList.add('hidden');
+            document.getElementById('quiz-play-screen').classList.remove('hidden');
+            document.getElementById('quiz-score-screen').classList.add('hidden');
+            
+            currentQuestionIndex = 0;
+            userAnswers = Array(10).fill(null);
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const currentQuestion = quizQuestions[currentQuestionIndex];
+            
+            // Render text
+            document.getElementById('quiz-question-counter').innerText = `Soal ${currentQuestionIndex + 1} dari 10`;
+            document.getElementById('quiz-question-text').innerText = currentQuestion.question;
+            
+            // Progress Bar Update
+            const percentage = ((currentQuestionIndex + 1) / 10) * 100;
+            document.getElementById('quiz-progress-bar').style.width = percentage + '%';
+
+            // Generate options
+            const optionsContainer = document.getElementById('quiz-options-container');
+            optionsContainer.innerHTML = '';
+
+            currentQuestion.options.forEach((option, index) => {
+                const isSelected = userAnswers[currentQuestionIndex] === index;
+                
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.onclick = () => selectOption(index);
+                
+                // Active Styling vs default styling
+                if (isSelected) {
+                    btn.className = "w-full text-left p-3.5 text-xs font-semibold rounded-xl border-2 border-emerald-500 bg-emerald-500/10 text-emerald-300 flex justify-between items-center transition duration-150 shadow-md shadow-emerald-950/20";
+                } else {
+                    btn.className = "w-full text-left p-3.5 text-xs font-medium rounded-xl border border-slate-800 bg-slate-900/40 hover:bg-slate-800/60 text-slate-300 hover:text-slate-100 transition duration-150";
+                }
+
+                // Append Option Label
+                const optionText = document.createElement('span');
+                optionText.innerText = option;
+                btn.appendChild(optionText);
+
+                if (isSelected) {
+                    const icon = document.createElement('i');
+                    icon.className = "fa-solid fa-circle-check text-emerald-400 text-sm pl-2 shrink-0";
+                    btn.appendChild(icon);
+                }
+
+                optionsContainer.appendChild(btn);
+            });
+
+            // Adjust navigation buttons
+            const prevBtn = document.getElementById('btn-prev-question');
+            const nextBtn = document.getElementById('btn-next-question');
+
+            if (currentQuestionIndex === 0) {
+                prevBtn.classList.add('opacity-40', 'cursor-not-allowed');
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+                prevBtn.disabled = false;
+            }
+
+            if (currentQuestionIndex === 9) {
+                nextBtn.innerHTML = `Selesai Kuis <i class="fa-solid fa-square-check ml-1.5 text-xs"></i>`;
+                nextBtn.className = "px-4 py-2 text-[11px] font-bold rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition duration-150 flex items-center gap-1.5";
+            } else {
+                nextBtn.innerHTML = `Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>`;
+                nextBtn.className = "px-4 py-2 text-[11px] font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition duration-150 flex items-center gap-1.5";
+            }
+        }
+
+        function selectOption(optionIndex) {
+            userAnswers[currentQuestionIndex] = optionIndex;
+            showQuestion();
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < 9) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                // Submit Quiz & Show Scorecard
+                calculateAndShowScore();
+            }
+        }
+
+        function calculateAndShowScore() {
+            let correctCount = 0;
+            
+            // Grade check
+            quizQuestions.forEach((q, index) => {
+                if (userAnswers[index] === q.correct) {
+                    correctCount++;
+                }
+            });
+
+            const percentage = (correctCount / 10) * 100;
+
+            // Transition components visibility
+            document.getElementById('quiz-play-screen').classList.add('hidden');
+            document.getElementById('quiz-score-screen').classList.remove('hidden');
+
+            // Set scores values
+            document.getElementById('score-percentage-text').innerText = percentage + '%';
+            document.getElementById('score-summary-text').innerText = `Anda menjawab ${correctCount} dari 10 soal dengan benar.`;
+            document.getElementById('score-stat-correct').innerText = `${correctCount} / 10`;
+
+            // SVG Circular Progress bar animation calculate offset (Max dashoffset 301.6)
+            const circle = document.getElementById('score-circle-progress');
+            const offset = 301.6 - (301.6 * percentage) / 100;
+            circle.style.strokeDashoffset = offset;
+
+            // Visual feedback messages and status badge based on score
+            const statusBadge = document.getElementById('score-stat-status');
+            const feedbackText = document.getElementById('score-feedback-text');
+
+            if (percentage >= 80) {
+                statusBadge.innerText = "Lulus Istimewa";
+                statusBadge.className = "text-xs font-bold text-emerald-400";
+                feedbackText.innerText = "Sangat Baik! Anda memiliki pemahaman mitigasi bencana berbasis mekanika yang sangat unggul!";
+            } else if (percentage >= 60) {
+                statusBadge.innerText = "Lulus Baik";
+                statusBadge.className = "text-xs font-bold text-amber-400";
+                feedbackText.innerText = "Cukup Baik. Pelajari ulasan kembali beberapa nomor yang keliru untuk penguasaan materi 100%.";
+            } else {
+                statusBadge.innerText = "Perlu Remedial";
+                statusBadge.className = "text-xs font-bold text-rose-400";
+                feedbackText.innerText = "Jangan berkecil hati! Baca kembali rangkuman fisika mitigasi lereng lalu coba kerjakan ulang kuis ini.";
+            }
+        }
+
+        function restartQuiz() {
+            startQuiz();
+        }
+    </script>
+</body>
+</html>
